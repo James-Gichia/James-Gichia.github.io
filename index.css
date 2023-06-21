@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+h2 {
+  color: magenta;
+}
+h1 {
+  color: rgb(217, 88, 217);
+}
