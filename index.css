@@ -1,13 +1,82 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-h2 {
-  color: magenta;
-}
-h1 {
-  color: rgb(217, 88, 217);
+body {
+  min-width: 310px;
+  max-width: 99vw;
+  font-size: 2rem;
+  padding: 0 20px 0 20px;
+  background-color: darkgray;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 div {
-  background-color: rgb(43, 39, 39);
+  background-color: darkviolet;
+}
+
+form {
+  background-color: fuchsia;
+}
+
+header,
+section,
+footer {
+  background-color: beige;
+  margin-bottom: 2em;
+  padding: 10px;
+}
+
+div,
+form {
+  min-width: 200px;
+  min-height: 200px;
+  margin: 10px;
+}
+
+header,
+footer {
+  background-color: bisque;
+  padding: 5px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+}
+header div,
+footer div {
+  background-color: deeppink;
+  min-height: 50px;
+}
+
+@media all and (min-width: 768px) {
+  .home,
+  .about,
+  .projects {
+    display: grid;
+  }
+
+  .home {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
