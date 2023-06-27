@@ -183,7 +183,7 @@ span {
 }
 .about .web-technologies li {
   list-style-type: none;
-  /* border: 1px solid ghostwhite; */
+  border: 1px solid ghostwhite;
   border-radius: 5px;
   margin-bottom: 5px;
 }
