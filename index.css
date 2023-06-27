@@ -132,6 +132,7 @@ form {
   margin: 1px;
   padding: 0.2em;
   /* border: 2px solid var(--border-color); */
+  border-bottom: 1px solid var(--hover-color);
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -139,7 +140,7 @@ form {
 }
 
 .content {
-  padding: 2.5em;
+  padding: 2em;
   line-height: 3ch;
 }
 
