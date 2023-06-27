@@ -1,45 +1,152 @@
+/* CSS reset for all elements */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-body {
-  min-width: 310px;
-  max-width: 99vw;
-  font-size: 2rem;
-  padding: 0 20px 0 20px;
-  background-color: darkgray;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+/* My Variables */
+:root {
+  --bg-color: hsl(256, 89%, 11%);
+  --header-bgc: hsl(256, 92%, 15%);
+  --border-color: hsla(267, 60%, 91%, 0.75);
+  --hover-button-color: hsla(283, 84%, 45%, 0.75);
+  --heading-color: hsl(309, 99%, 60%);
+  --hover-color: hsl(280, 100%, 58%);
 }
 
+/* General settings for the body */
+body {
+  color: white;
+  min-width: 310px;
+  max-width: 99vw;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0 5px 0 5px;
+  background-color: hsl(256, 89%, 11%);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: var(--heading-color);
+}
+h3 {
+  color: var(--heading-color);
+  margin: 2em;
+}
 div {
-  background-color: darkviolet;
+  background-color: transparent;
 }
 
 form {
-  background-color: fuchsia;
+  background-color: transparent;
 }
 
 header,
 section,
 footer {
-  background-color: beige;
+  background-color: transparent;
   margin-bottom: 2em;
-  padding: 10px;
+  padding: 2px;
+  /* border: 2px solid var(--border-color); */
 }
 
+/* Reset for all links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: row;
+}
+.logo {
+  min-width: 60px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  display: block;
+  border-radius: 50%;
+}
+
+.icon {
+  min-width: 60px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon i {
+  color: var(--heading-color);
+  font-size: 2rem;
+}
+
+.icon i:hover {
+  font-size: 2.1rem;
+  color: var(--hover-color);
+}
+
+header ul {
+  border: 1px solid white;
+  display: none;
+  position: absolute;
+  background-color: var(--header-bgc);
+  right: 2px;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  color: hsl(300, 99%, 50%);
+}
+
+header ul li {
+  list-style-type: none;
+  margin: 0.7em;
+  border: 2px solid hsl(300, 94%, 51%);
+  border-radius: 5px;
+  min-width: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header ul li:hover {
+  border-bottom: 2px solid var(--hover-button-color);
+  color: var(--header-bgc);
+  background-color: hsl(300, 94%, 51%);
+}
+
+/* Styles for the divs and the form */
 div,
 form {
   min-width: 200px;
-  min-height: 200px;
-  margin: 10px;
+  min-height: 50vh;
+  margin: 1px;
+  padding: 0.2em;
+  /* border: 2px solid var(--border-color); */
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.content {
+  padding: 2.5em;
+  line-height: 3ch;
 }
 
 header,
 footer {
-  background-color: bisque;
-  padding: 5px;
+  background-color: var(--bg-color);
+  padding: 2px;
 }
 
 header {
@@ -47,26 +154,56 @@ header {
   top: 0;
 }
 
-footer {
-  position: sticky;
-  bottom: 0;
-}
 header div,
 footer div {
-  background-color: deeppink;
+  background-color: var(--header-bgc);
   min-height: 50px;
 }
 
+/* Home Advanced Styles */
+.home div:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home div:first-child h1 {
+  font-size: 2rem;
+  text-decoration: double;
+  font-weight: 900;
+}
+
+span {
+  color: var(--heading-color);
+}
+
+.about .web-technologies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about .web-technologies li {
+  list-style-type: none;
+  /* border: 1px solid ghostwhite; */
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.about .web-technologies li:hover {
+  background-color: ghostwhite;
+  color: var(--header-bgc);
+}
+
+/* Media Queries */
+
+/* For tablets and small laptops */
 @media all and (min-width: 768px) {
-  .home,
+  header ul {
+    display: flex;
+  }
   .about,
   .projects {
     display: grid;
   }
 
-  .home {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .about {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -75,6 +212,7 @@ footer div {
   }
 }
 
+/* For larger screens from laptops */
 @media all and (min-width: 1024px) {
   .projects {
     grid-template-columns: repeat(3, 1fr);
