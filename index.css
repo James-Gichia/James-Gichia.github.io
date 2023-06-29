@@ -236,6 +236,8 @@ span {
 form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 2rem;
   border: 1px solid var(--heading-color);
   border-radius: 10%;
@@ -250,7 +252,7 @@ form .form-item {
   border-radius: 5px;
   background-color: rgb(223, 205, 223);
   min-height: 30px;
-  min-width: 300px;
+  min-width: 250px;
 }
 form .submit {
   background-color: var(--heading-color);
