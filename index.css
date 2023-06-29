@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,900;1,700;1,900&display=swap");
+
 /* CSS reset for all elements */
 * {
   box-sizing: border-box;
@@ -24,15 +26,25 @@ body {
   font-size: 1rem;
   padding: 0 5px 0 5px;
   background-color: hsl(256, 89%, 11%);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
+  font-size: 2rem;
   color: var(--heading-color);
+  text-shadow: 20px 0px 20px rgba(165, 23, 221, 8),
+    -20px 0px 20px rgba(165, 23, 221, 8), 0px 20px 20px rgba(165, 23, 221, 8),
+    0px -20px 20px rgba(165, 23, 221, 8);
+}
+
+h2 {
+  color: var(--heading-color);
+  text-shadow: 3px 3px 5px hsl(309, 99%, 60%);
 }
 h3 {
   color: var(--heading-color);
   margin: 2em;
+  text-shadow: 3px 3px 5px hsl(280, 100%, 58%);
 }
 div {
   background-color: transparent;
@@ -95,7 +107,7 @@ a {
 }
 
 header ul {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   display: none;
   position: absolute;
   background-color: var(--header-bgc);
@@ -110,6 +122,7 @@ header ul {
 header ul li {
   list-style-type: none;
   margin: 0.7em;
+  margin-left: 3em;
   border: 2px solid hsl(300, 94%, 51%);
   border-radius: 5px;
   min-width: 70px;
@@ -174,6 +187,14 @@ footer div {
   font-weight: 900;
 }
 
+.home .content,
+.about .content {
+  border-bottom: 1px solid hsla(283, 84%, 45%, 0.75);
+  box-shadow: 2px 2px 10px hsla(283, 84%, 45%, 0.75);
+  border-radius: 30px;
+  text-shadow: 1px 1px 3px whitesmoke;
+}
+
 span {
   color: var(--heading-color);
 }
@@ -187,11 +208,73 @@ span {
   list-style-type: none;
   border: 1px solid ghostwhite;
   border-radius: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 1em;
 }
 .about .web-technologies li:hover {
   background-color: ghostwhite;
   color: var(--header-bgc);
+}
+
+.projects div {
+  border: none;
+}
+.projects .content {
+  border: none;
+  box-shadow: 5px 5px 30px 15px hsla(283, 84%, 45%, 0.65);
+  border-radius: 30px;
+}
+.projects img {
+  border-radius: 5%;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  border: 1px solid var(--heading-color);
+  border-radius: 10%;
+  padding: 2em;
+  max-width: 500px;
+  box-shadow: 2px 2px 30px 10px hsl(280, 100%, 58%);
+}
+form .form-item {
+  display: block;
+  margin: 1em;
+  border: 3px solid var(--hover-button-color);
+  border-radius: 5px;
+  background-color: rgb(223, 205, 223);
+  min-height: 30px;
+}
+form .submit {
+  background-color: var(--heading-color);
+  border: none;
+}
+form .submit:hover {
+  cursor: pointer;
+  background-color: var(--bg-color);
+  color: var(--heading-color);
+}
+
+footer {
+  display: block;
+}
+
+footer div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer i {
+  display: block;
+  color: var(--heading-color);
+  padding-left: 2em;
 }
 
 /* Media Queries */
@@ -200,6 +283,9 @@ span {
 @media all and (min-width: 768px) {
   header ul {
     display: flex;
+  }
+  .home div:first-child h1 {
+    font-size: 3.2rem;
   }
   .projects {
     display: grid;
@@ -212,6 +298,13 @@ span {
 
 /* For larger screens from laptops */
 @media all and (min-width: 1024px) {
+  .home,
+  .about {
+    padding-inline: 15em;
+  }
+  .home div:first-child h1 {
+    font-size: 3.8rem;
+  }
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
